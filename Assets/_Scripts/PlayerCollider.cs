@@ -55,6 +55,10 @@ public class PlayerCollider : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Enemy")) {
 			this.LivesValue -= 1;
 		}
+
+		if (other.gameObject.CompareTag ("Boundary")) {
+			this.ScoreValue += 10; 
+		}
 	}
 		
 }
