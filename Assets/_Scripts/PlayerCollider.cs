@@ -12,6 +12,9 @@ public class PlayerCollider : MonoBehaviour {
 	[Header("UI Objects")]
 	public Text LivesLabel;
 	public Text ScoreLabel;
+	public Text FinalScoreLabel; 
+	public Button RestartButton; 
+
 
 	public int LivesValue {
 		get {
@@ -21,7 +24,7 @@ public class PlayerCollider : MonoBehaviour {
 		set {
 			this._livesValue = value;
 			if (this._livesValue <= 0) {
-
+				this._gameOver (); 
 			} else {
 				this.LivesLabel.text = "Lives: " + this._livesValue;
 			}
@@ -43,7 +46,9 @@ public class PlayerCollider : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this.LivesValue = 5; 
-		this.ScoreValue = 0; 
+		this.ScoreValue = 5; 
+		this.FinalScoreLabel.gameObject.SetActive (false);
+		this.RestartButton.gameObject.SetActive (false);
 	}
 
 	// Update is called once per frame
@@ -60,5 +65,15 @@ public class PlayerCollider : MonoBehaviour {
 			this.ScoreValue += 10; 
 		}
 	}
-		
+
+	private void _gameOver(){
+		this.FinalScoreLabel.text = "FINAL SCORE: " + this.ScoreValue; 
+		this.FinalScoreLabel.gameObject.SetActive (true); 
+		this.RestartButton.gameObject.SetActive (true); 
+		this.ScoreLabel.gameObject.SetActive (false); 
+		this.LivesLabel.gameObject.SetActive (false); 
+	}
+	public void RestartGameButton_Click() {
+		SceneManager.LoadScene ("Main");
+	}
 }
