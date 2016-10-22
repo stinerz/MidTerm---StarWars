@@ -10,10 +10,13 @@ public class PlayerController : MonoBehaviour {
 	
 	// PRIVATE INSTANCE VARIABLES
 	private Vector2 _newPosition = new Vector2(0.0f, 0.0f);
-	
+	private float _playerInput; 
+	private Transform _transform; 
+
 	// Use this for initialization
 	void Start () {
 
+		this._transform = this.GetComponent<Transform> ();
 	}
 
 	// Update is called once per frame
@@ -24,16 +27,6 @@ public class PlayerController : MonoBehaviour {
 	private void _CheckInput() {
 		this._newPosition = gameObject.GetComponent<Transform> ().position; // current position
 
-		/* movement by keyboard
-		if (Input.GetAxis ("Horizontal") > 0) {
-			this._newPosition.x += this.speed; // add move value to current position
-		}
-	
-		
-		if (Input.GetAxis ("Horizontal") < 0) {
-			this._newPosition.x -= this.speed; // subtract move value to current position
-		}
-		*/
 
 		// movement by mouse
 		Vector2 mousePosition = Input.mousePosition;
