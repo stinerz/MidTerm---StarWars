@@ -7,16 +7,17 @@ public class PlayerController : MonoBehaviour {
 	public Boundary boundary;
 
 	public Camera camera;
-	
+
 	// PRIVATE INSTANCE VARIABLES
 	private Vector2 _newPosition = new Vector2(0.0f, 0.0f);
-	private float _playerInput; 
-	private Transform _transform; 
+	private Transform _transform;
+	private Rigidbody2D _rigidbody;
+	private GameObject _playerControllerObject;
+	private PlayerCollider _playerCollider;
 
 	// Use this for initialization
 	void Start () {
-
-		this._transform = this.GetComponent<Transform> ();
+		this._initialize (); 
 	}
 
 	// Update is called once per frame
@@ -26,7 +27,6 @@ public class PlayerController : MonoBehaviour {
 
 	private void _CheckInput() {
 		this._newPosition = gameObject.GetComponent<Transform> ().position; // current position
-
 
 		// movement by mouse
 		Vector2 mousePosition = Input.mousePosition;
@@ -46,4 +46,13 @@ public class PlayerController : MonoBehaviour {
 			this._newPosition.x = this.boundary.xMax;
 		}
 	}
+
+	private void _initialize(){
+		this._transform = GetComponent<Transform> ();
+		this._rigidbody = GetComponent<Rigidbody2D> ();
+		this._playerControllerObject = GameObject.Find ("Player Controller");
+		this._playerCollider = GetComponent<PlayerCollider> () as PlayerCollider;
+	}
+
+
 }
