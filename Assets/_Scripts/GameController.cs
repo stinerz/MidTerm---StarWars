@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/*Oct 22,2016
+ * Christina Kuo - 300721385 
+ * Game Controller - computationally clones the enemy prefab*/
 
 public class GameController : MonoBehaviour {
 
-		// PUBLIC INSTANCE VARIABLES
+	// PUBLIC INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++++
 		public int enemyCount;
 		public GameObject enemy;
 

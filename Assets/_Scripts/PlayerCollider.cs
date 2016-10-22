@@ -87,7 +87,7 @@ public class PlayerCollider : MonoBehaviour {
 		this.ScoreLabel.gameObject.SetActive (false); 
 		this.LivesLabel.gameObject.SetActive (false); 
 		this.Player.SetActive (false); 
-		this.Enemy.SetActive (false); 
+
 	}
 
 	//Method restarts the game when player clicks on the restart button 

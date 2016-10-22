@@ -47,4 +47,6 @@ public class EnemyController : MonoBehaviour {
 		Vector2 resetPosition = new Vector2 (Random.Range(boundary.xMin, boundary.xMax), boundary.yMax);
 		gameObject.GetComponent<Transform> ().position = resetPosition;
 	}
+
+
 }
