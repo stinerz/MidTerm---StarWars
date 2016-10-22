@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*Oct 22,2016
+ * Christina Kuo - 300721385 
+ * Player Controller - controls player movement by mouse*/
+
 public class PlayerController : MonoBehaviour {
 	// PUBLIC INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++++
 	//public float speed;

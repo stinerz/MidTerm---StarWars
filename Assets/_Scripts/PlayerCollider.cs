@@ -14,6 +14,7 @@ public class PlayerCollider : MonoBehaviour {
 	public Text ScoreLabel;
 	public Text FinalScoreLabel; 
 	public Button RestartButton; 
+	public AudioSource Hit_Hurt8; 
 
 
 	public int LivesValue {
@@ -59,6 +60,7 @@ public class PlayerCollider : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Enemy")) {
 			this.LivesValue -= 1;
+			this.Hit_Hurt8.Play (); 
 		}
 
 		if (other.gameObject.CompareTag ("Boundary")) {

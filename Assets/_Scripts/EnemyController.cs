@@ -1,23 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[System.Serializable]
+/*Oct 22,2016
+ * Christina Kuo - 300721385 
+ * Enemy Controller sets the speed and position of the enemy*/
+
+[System.Serializable] //variables display on inspector
 public class Speed {
 	public float minSpeed, maxSpeed;
 }
 
-[System.Serializable]
+[System.Serializable] //variables display on inspector 
 public class Boundary {
 	public float xMin, xMax, yMin, yMax;
 }
 
-
 public class EnemyController : MonoBehaviour {
-	// PUBLIC INSTANCE VARIABLES
+	// PUBLIC INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++++
 	public Speed speed;
 	public Boundary boundary;
 
-	// PRIVATE INSTANCE VARIABLES
+	// PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++++
 	private float _CurrentSpeed;
 	private float _CurrentDrift;
 
